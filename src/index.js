@@ -3,8 +3,14 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import stores from './stores';
+import TodolistStore from './stores/todolist.store';
 import { Provider } from 'mobx-react';
+import StyleStore from './stores/style.store';
+
+const stores = {
+  styleStore: new StyleStore(),
+  todoListStore: new TodolistStore()
+}
 
 ReactDOM.render(
     <Provider {...stores}>

@@ -1,6 +1,8 @@
-import { observable, action, useStrict } from 'mobx';
+import { observable, action
+    // , useStrict 
+} from 'mobx';
 
-useStrict(true);
+// useStrict(true);
 
 class StyleStore{
 
@@ -8,7 +10,8 @@ class StyleStore{
      * Application Bar Styles
      */
     @observable applicationBarStyle = {
-        height: 40,
+        height: 5,
+        padding: 15,
         backgroundColor: '#303030',
         color: '#ffffff'
     }
@@ -27,7 +30,7 @@ class StyleStore{
     /**
      * UI Handle to change theme to light
      */
-    @action switchToLightTheme(){
+    @action switchToLightTheme(){   
         this.applicationBarStyle = {
             ...this.applicationBarStyle,
             backgroundColor: '#EEEEEE',
@@ -36,4 +39,4 @@ class StyleStore{
     }
 }
 
-export default new StyleStore;
+export default StyleStore;
