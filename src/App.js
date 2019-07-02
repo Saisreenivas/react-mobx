@@ -3,18 +3,13 @@ import React, { Component } from "react";
 // import './App.css';
 import { observer } from 'mobx-react';
 import ApplicationBar from './applicationbar/ApplicationBar';
+import TodoBody from './todobody/TodoBody';
 
 @observer(['styleStore','todoListStore'])
 // , 'todolistStore']
 class App extends Component {
 
-  createNew(e) {
-    if (e.which === 13) {
-      this.props.todoListStore.createTodo(e.target.value)
-    // this.todoList.push(new Todo(e.target.value))
-      e.target.value = ""
-    }
-  }
+  
   
   render() {
     
@@ -45,14 +40,7 @@ class App extends Component {
         </header> */}
 
         <hr></hr>
-        <div style={{padding:'15px', backgroundColor:'#eeeeee'}}>
-          <div>
-            <span style={{width:"15%", display:"inline-block"}} >Enter Todo's here:</span>
-            <input type="text" onKeyPress={this.createNew.bind(this)} />
-          </div><br></br>
-
-          {this.props.todoListStore.todoList.map((entry,i)=><li key={i} style={this.props.styleStore.applicationBarStyle}>{entry.msg}</li>)}
-        </div>
+        <TodoBody />
       </div>
     );
   }
