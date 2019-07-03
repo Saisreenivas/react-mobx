@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import TodolistStore from './stores/todolist.store';
 import { Provider } from 'mobx-react';
 import StyleStore from './stores/style.store';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 const stores = {
   styleStore: new StyleStore(),
@@ -13,9 +14,11 @@ const stores = {
 }
 
 ReactDOM.render(
-    <Provider {...stores}>
-    <App />
-    </Provider>
+  <Router>
+      <Provider {...stores}>
+        <App />
+      </Provider>
+    </Router>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

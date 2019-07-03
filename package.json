@@ -46,6 +46,7 @@
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^15.3.0",
+    "react-router-dom": "^5.0.1",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
@@ -135,7 +136,12 @@
       "react-app"
     ],
     "plugins": [
-      ["@babel/plugin-proposal-decorators", { "legacy": true }]
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
     ]
   }
 }

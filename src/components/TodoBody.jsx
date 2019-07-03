@@ -24,7 +24,7 @@ class TodoBody extends React.Component{
 
     render(){
         return (
-            <div style={{padding:'15px', backgroundColor:'#eeeeee'}}>
+            <div >
                     <div>
                     <span style={{width:"15%", display:"inline-block"}} >Enter Todo's here:</span>
                     <input type="text" onKeyPress={this.createNew.bind(this)} />
